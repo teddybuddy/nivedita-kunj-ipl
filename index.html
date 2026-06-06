@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nivedita Kunj IPL 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#home" class="brand">
+        <span class="brand-ball">🏏</span>
+        <span class="brand-text">Nivedita Kunj <b>IPL</b></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#register">Register</a>
+        <a href="#board">Teams</a>
+        <a href="#rules">Rules</a>
+        <a href="#prizes">Prizes</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-kicker">Society Cricket Premier League</p>
+      <h1 class="hero-title">NIVEDITA KUNJ <span>IPL 2026</span></h1>
+      <p class="hero-sub">Gather your flat-mates, pick your captain, and battle it out for the trophy!</p>
+
+      <div class="hero-deadline">
+        <span class="deadline-label">⏳ Registration closes on</span>
+        <span class="deadline-date">June 20, 2026</span>
+        <span id="countdown" class="countdown"></span>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#register" class="btn btn-primary">Register Your Team</a>
+        <a href="#rules" class="btn btn-ghost">View Rules</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Display Board ===== -->
+  <section id="board" class="section board">
+    <h2 class="section-title">📊 Teams Registered</h2>
+    <p class="section-sub">Live count of teams across all age categories.</p>
+
+    <div class="board-grid">
+      <div class="board-card total">
+        <span class="board-num" id="count-total">0</span>
+        <span class="board-cat">Total Teams</span>
+      </div>
+      <div class="board-card">
+        <span class="board-num" id="count-u12">0</span>
+        <span class="board-cat">Under 12</span>
+      </div>
+      <div class="board-card">
+        <span class="board-num" id="count-12to40">0</span>
+        <span class="board-cat">12 to 40</span>
+      </div>
+      <div class="board-card">
+        <span class="board-num" id="count-40plus">0</span>
+        <span class="board-cat">40 Plus</span>
+      </div>
+    </div>
+
+    <div class="team-list-wrap">
+      <h3 class="team-list-title">Registered Teams</h3>
+      <div id="team-list" class="team-list">
+        <p class="empty-note">No teams registered yet. Be the first! 🏆</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Registration ===== -->
+  <section id="register" class="section register">
+    <h2 class="section-title">📝 Team Registration</h2>
+    <p class="section-sub">Each team can have up to <b>4 players</b>, including <b>1 captain</b>.</p>
+
+    <form id="reg-form" class="reg-form" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="teamName">Team Name *</label>
+          <input type="text" id="teamName" name="teamName" placeholder="e.g. Tower-A Strikers" required />
+        </div>
+        <div class="field">
+          <label for="category">Age Category *</label>
+          <select id="category" name="category" required>
+            <option value="" disabled selected>Select category</option>
+            <option value="u12">Under 12</option>
+            <option value="12to40">12 to 40</option>
+            <option value="40plus">40 Plus</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="team@example.com" required />
+        </div>
+        <div class="field">
+          <label for="mobile">Mobile Number *</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile" maxlength="10" required />
+        </div>
+        <div class="field">
+          <label for="flat">Flat Number *</label>
+          <input type="text" id="flat" name="flat" placeholder="e.g. B-204" required />
+        </div>
+      </div>
+
+      <h3 class="players-title">Players <span>(1 captain + up to 3 more)</span></h3>
+
+      <div class="player-row">
+        <span class="player-tag captain-tag">★ Captain</span>
+        <input type="text" class="player-name" placeholder="Captain's full name *" data-required="true" />
+      </div>
+      <div class="player-row">
+        <span class="player-tag">Player 2</span>
+        <input type="text" class="player-name" placeholder="Player 2 name (optional)" />
+      </div>
+      <div class="player-row">
+        <span class="player-tag">Player 3</span>
+        <input type="text" class="player-name" placeholder="Player 3 name (optional)" />
+      </div>
+      <div class="player-row">
+        <span class="player-tag">Player 4</span>
+        <input type="text" class="player-name" placeholder="Player 4 name (optional)" />
+      </div>
+
+      <p id="form-msg" class="form-msg"></p>
+
+      <button type="submit" class="btn btn-primary btn-block">🏏 Submit Registration</button>
+    </form>
+  </section>
+
+  <!-- ===== Rules ===== -->
+  <section id="rules" class="section rules">
+    <h2 class="section-title">📜 Match Rules</h2>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <span class="rule-icon">🏏</span>
+        <h3>4 Overs Match</h3>
+        <p>Every match is a fast-paced 4-over-a-side contest.</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon">🎯</span>
+        <h3>Max 2 Overs per Bowler</h3>
+        <p>Each player can bowl a maximum of 2 overs in a match.</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon">👥</span>
+        <h3>4 Players per Team</h3>
+        <p>Teams have a maximum of 4 players, one of whom is the captain.</p>
+      </div>
+      <div class="rule-card">
+        <span class="rule-icon">🗓️</span>
+        <h3>Register by June 20</h3>
+        <p>Last date for registration is June 20, 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Prizes ===== -->
+  <section id="prizes" class="section prizes">
+    <h2 class="section-title">🏆 Prize Money</h2>
+    <p class="section-sub">Winners in <b>each category</b> take home the cash prize!</p>
+    <div class="prize-grid">
+      <div class="prize-card">
+        <span class="prize-cat">Under 12</span>
+        <span class="prize-amount">₹500</span>
+      </div>
+      <div class="prize-card featured">
+        <span class="prize-cat">12 to 40</span>
+        <span class="prize-amount">₹500</span>
+      </div>
+      <div class="prize-card">
+        <span class="prize-cat">40 Plus</span>
+        <span class="prize-amount">₹500</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p>🏏 <b>Nivedita Kunj IPL 2026</b> — Organised by the Residents' Welfare Association</p>
+    <p class="footer-small">Registrations close June 20, 2026. Play fair, have fun!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
