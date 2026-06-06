@@ -6,7 +6,7 @@
    LOCAL mode (data saved only in this browser).
    ========================================================= */
 const CONFIG = {
-  WEB_APP_URL: "PASTE_YOUR_WEB_APP_URL_HERE",
+  WEB_APP_URL: "https://script.google.com/macros/s/AKfycbyfbwQRPbK6r6uA2egEet6BvgRLdgpDTTSDYUt_VCa0xhjU7VuPajRtyqdBTdM8wcM/exec",
 };
 
 const USE_BACKEND =
