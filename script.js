@@ -14,7 +14,7 @@ const USE_BACKEND =
   CONFIG.WEB_APP_URL.indexOf("script.google.com") !== -1;
 
 const STORAGE_KEY = "nk_ipl_teams_2026";
-const DEADLINE = new Date("2026-06-20T23:59:59");
+const DEADLINE = new Date("2026-07-10T23:59:59");
 
 const CATEGORY_LABELS = {
   u12: "Under 12",
@@ -179,7 +179,7 @@ document.getElementById("reg-form").addEventListener("submit", async function (e
   e.preventDefault();
 
   if (new Date() > DEADLINE) {
-    setMsg("Sorry, registration closed on June 20, 2026.", "error");
+    setMsg("Sorry, registration closed on July 10, 2026.", "error");
     return;
   }
 
